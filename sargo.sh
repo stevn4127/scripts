@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
 cd $HOME/bootleg
+rm -rf device/google/bonito
 rm -rf hardware/qcom/audio
+rm -rf device/google/sargo
+rm -rf device/google/bonito-sepolicy
+rm -rf vendor/google
+rm -rf kernel/google/bonito
+rm -rf hardware/google/pixel
+rm -rf vendor/gapps
 
 git clone https://github.com/stebomurkn420/device_google_sargo device/google/sargo
 git clone https://github.com/stebomurkn420/device_google_bonito device/google/bonito
