@@ -1,6 +1,25 @@
 #!/usr/bin/env bash
 
+sudo apt install repo
+
+sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
+
+sudo apt install openjdk-8-jdk
+
+mkdir bootleg
+
+mkdir -p ~/bin
+
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
+chmod a+x ~/bin/repo
+
 cd $HOME/bootleg
+
+repo init -u https://github.com/BootleggersROM/manifest.git -b pasta
+
+repo sync --force-sync -j32
+
 rm -rf device/google/bonito
 rm -rf hardware/qcom/audio
 rm -rf device/google/sargo
@@ -27,4 +46,4 @@ git clone https://github.com/stebomurkn420/hardware_qcom_sdm710_data_ipacfg-mgr 
 
 . build/envsetup.sh
 lunch bootleg_sargo-userdebug
-make bacon -j16 |& tee /tmp/build.log
+make bacon -j32 |& tee /tmp/build.log
