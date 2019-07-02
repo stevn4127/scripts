@@ -19,4 +19,4 @@ git clone https://github.com/stebomurkn420/hardware_qcom_sdm710_data_ipacfg-mgr 
 
 . build/envsetup.sh
 lunch bootleg_bonito-userdebug
-make bacon -j16 |& tee /tmp/build.log
+make bacon -j32 |& tee /tmp/build.log
