@@ -48,6 +48,24 @@ git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/thermal
 git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/vr -b android-9.0.0_r42 hardware/qcom/sdm710/vr
 git clone https://github.com/stebomurkn420/hardware_qcom_sdm710_data_ipacfg-mgr hardware/qcom/sdm710/data/ipacfg-mgr
 
+cd $HOME/googledrive/Bootleggers/Bonito
+rm BootleggersROM*.zip
+rm system.img
+rm boot.img
+rm vbmeta.img
+rm dtbo.img
+
+cd $HOME/bootleg
+
+bash tg_bot "Starting Bootleggers build for Bonito by @stebomurkn420 Watch the LIVE build [HERE](https://www.twitch.tv/stebomurkn420) $1"
+
 . build/envsetup.sh
 lunch bootleg_bonito-userdebug
 make bacon -j32 |& tee /tmp/build.log
+
+bash tg_bot "Bootleggers build for Bonito successful! UPLOADING... There will be another notification when the upload completes!"
+    (
+        cd out/target/product/marlin
+        cp $(ls BootleggersROM*.zip && system*.img && dtbo*.img && vbmeta*.img && boot*.img | sort | tail -n 1) $HOME/googledrive/Bootleggers/Bonito
+    )
+        bash tg_bot "Bootleggers build for Bonito uploaded! @stebomurkn420 Donwload the ROM [HERE](https://drive.google.com/drive/folders/16sV8KULhC_rXh3WPCGXfwWhprbGeadyq) $1"
