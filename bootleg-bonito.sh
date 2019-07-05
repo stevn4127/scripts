@@ -24,16 +24,6 @@ repo init -u https://github.com/BootleggersROM/manifest.git -b pasta
 
 repo sync --force-sync -j32
 
-rm -rf device/google/bonito
-rm -rf hardware/qcom/audio
-rm -rf device/google/sargo
-rm -rf device/google/bonito-sepolicy
-rm -rf vendor/google
-rm -rf kernel/google/bonito
-rm -rf hardware/google/pixel
-rm -rf vendor/gapps
-rm -rf hardware/qcom/sdm710
-
 git clone https://github.com/stebomurkn420/device_google_bonito device/google/bonito
 git clone https://github.com/stebomurkn420/device_google_bonito-sepolicy device/google/bonito-sepolicy
 git clone https://github.com/stebomurkn420/vendor_google vendor/google
@@ -65,7 +55,7 @@ make bacon -j32 |& tee /tmp/build.log
 
 bash tg_bot "Bootleggers build for Bonito successful! UPLOADING... There will be another notification when the upload completes!"
     (
-        cd out/target/product/marlin
-        cp $(ls BootleggersROM*.zip && system*.img && dtbo*.img && vbmeta*.img && boot*.img | sort | tail -n 1) $HOME/googledrive/Bootleggers/Bonito
+        cd out/target/product/bonito
+        cp {system.img,vbmeta.img,dtbo.img,boot.img,$(ls BootleggersROM*.zip | sort | tail -n 1)} $HOME/googledrive/Bootleggers/Bonito
     )
         bash tg_bot "Bootleggers build for Bonito uploaded! @stebomurkn420 Donwload the ROM [HERE](https://drive.google.com/drive/folders/16sV8KULhC_rXh3WPCGXfwWhprbGeadyq) $1"
