@@ -8,8 +8,8 @@ mkdir android
 cd android
 mkdir sarnito-zips
 
-git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 aarch64-linux-android-4.9
-git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 arm-linux-androideabi-4.9
+git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-9.0.0_r44 aarch64-linux-android-4.9
+git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9 -b android-9.0.0_r44 arm-linux-androideabi-4.9
 git clone https://github.com/AOSiP/platform_prebuilts_clang_host_linux-x86 clang
 git clone --recurse-submodules https://github.com/stebomurkn420/Dank_kernel_google_sarnito sarnito
 git clone https://github.com/stebomurkn420/AnyKernel3 AnyKernel3
