@@ -15,13 +15,13 @@ DTBIMAGE="dtb"
 export CLANG_PATH=~/android/clang/clang-r353983e/bin
 export PATH=${CLANG_PATH}:${PATH}
 export CLANG_TRIPLE=aarch64-linux-gnu-
-export CROSS_COMPILE=~/android/aarch64-linux-android-4.9/aarch64-linux-android/bin/aarch64-linux-android-
+export CROSS_COMPILE=~/android/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 export CROSS_COMPILE_ARM32=${HOME}/android/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
 export LD_LIBRARY_PATH=${HOME}/android/clang/clang-r353983e/lib64:$LD_LIBRARY_PATH
 DEFCONFIG="dank_defconfig"
 
 # Kernel Details
-VER="Sarnito.V1.42"
+VER="Sarnito.V1.43"
 
 # Paths
 KERNEL_DIR=`pwd`
