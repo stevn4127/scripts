@@ -23,10 +23,12 @@ rm -rf vendor/google
 rm -rf kernel/google/bonito
 rm -rf vendor/gapps
 rm -rf hardware/qcom/sdm710
+rm -rf external/e2fsprogs
 
 git clone https://github.com/LiquidRemixSanders/device_motorola_sanders.git -b 9x device/motorola/sanders
 git clone https://github.com/LiquidRemixSanders/vendor_motorola_sanders.git -b 9.0 vendor/motorola/sanders
 git clone https://github.com/LiquidRemixSanders/android_kernel_motorola_msm8953.git -b 9.0-eas-caf kernel/motorola/msm8953
+git clone https://github.com/Sajidjnl/android_external_e2fsprogs.git -b lineage-16.0 external/e2fsprogs
 
 . build/envsetup.sh
 lunch liquid_sanders-userdebug
