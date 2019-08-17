@@ -1,23 +1,35 @@
 #!/usr/bin/env bash
 
-cd $HOME/googledrive/Liquid
-rm liquid*.zip
+cd
+
+sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev libncurses5 git repo openjdk-8-jdk
+
+cd
+
+mkdir liquid
+
+mkdir -p ~/bin
+
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
+chmod a+x ~/bin/repo
+
 cd $HOME/liquid
 
-git clone https://github.com/LiquidRemixSanders/device_motorola_sanders device/motorola/sanders
-git clone https://github.com/LiquidRemixSanders/android_kernel_motorola_msm8953 kernel/motorola/msm8953
-git clone https://github.com/LiquidRemixSanders/vendor_motorola_sanders vendor/motorola/sanders
+rm -rf hardware/qcom/audio
+rm -rf device/google/bonito
+rm -rf kernel/google/bonito
+rm -rf vendor/google
+rm -rf kernel/google/bonito
+rm -rf vendor/gapps
+rm -rf hardware/qcom/sdm710
+rm -rf external/e2fsprogs
 
-bash tg_bot "Starting Liquid Remix build for sanders by @Isyedsajid Watch the LIVE build [HERE](https://www.twitch.tv/stebomurkn420) $1"
-rm /tmp/build.log
+git clone https://github.com/LiquidRemixSanders/device_motorola_sanders.git -b 9x device/motorola/sanders
+git clone https://github.com/LiquidRemixSanders/vendor_motorola_sanders.git -b 9.0 vendor/motorola/sanders
+git clone https://github.com/LiquidRemixSanders/android_kernel_motorola_msm8953.git -b 9.0-eas-caf kernel/motorola/msm8953
+git clone https://github.com/Sajidjnl/android_external_e2fsprogs.git -b lineage-16.0 external/e2fsprogs
+
 . build/envsetup.sh
-make clean
 lunch liquid_sanders-userdebug
 mka liquid -j32 |& tee /tmp/build.log
-bash tg_bot "Liquid Remix build for sanders successful, UPLOADING..."
-    (
-        cd out/target/product/sanders
-        cp $(ls liquid*.zip | sort | tail -n 1) $HOME/googledrive/Liquid
-    )
-        bash tg_bot "Liquid Remix build for Sanders uploaded @Isyedsajid Donwload the ROM [HERE](https://drive.google.com/open?id=1j3dOX0s1NQmSN_VdlVhhPKLdO2htQIM0)"
-    fi
