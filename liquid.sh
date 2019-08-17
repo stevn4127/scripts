@@ -13,34 +13,16 @@ mkdir -p ~/bin
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
 chmod a+x ~/bin/repo
-
 cd $HOME/liquid
 
 repo init -u git://github.com/LiquidRemix/android_manifest.git -b pie
 
 repo sync --force-sync -j32
 
-rm -rf hardware/qcom/audio
-rm -rf device/google/bonito
-rm -rf kernel/google/bonito
-rm -rf vendor/google
-rm -rf kernel/google/bonito
-rm -rf vendor/gapps
-rm -rf hardware/qcom/sdm710
-
-git clone https://github.com/stebomurkn420/device_google_bonito device/google/bonito -b liquid
-git clone https://github.com/stebomurkn420/device_google_bonito-sepolicy device/google/bonito-sepolicy
-git clone https://github.com/stebomurkn420/vendor_google -b liquid vendor/google
-git clone --recurse-submodules https://github.com/stebomurkn420/Dank_sarnito -b inline kernel/google/bonito
-git clone https://github.com/LineageOS/android_hardware_qcom_audio hardware/qcom/audio
-git clone https://gitlab.com/stebomurkn420/vendor_gapps vendor/gapps
-git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/display -b android-9.0.0_r45 hardware/qcom/sdm710/display
-git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/gps -b android-9.0.0_r45 hardware/qcom/sdm710/gps
-git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/media -b android-9.0.0_r45 hardware/qcom/sdm710/media
-git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/thermal -b android-9.0.0_r45 hardware/qcom/sdm710/thermal
-git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/vr -b android-9.0.0_r45 hardware/qcom/sdm710/vr
-git clone https://github.com/stebomurkn420/hardware_qcom_sdm710_data_ipacfg-mgr hardware/qcom/sdm710/data/ipacfg-mgr
+git clone https://github.com/LiquidRemixSanders/device_motorola_sanders.git -b 9x device/motorola/sanders
+git clone https://github.com/LiquidRemixSanders/vendor_motorola_sanders.git -b 9.0 vendor/motorola/sanders
+git clone https://github.com/LiquidRemixSanders/android_kernel_motorola_msm8953.git -b 9.0-eas-caf kernel/motorola/msm8953
 
 . build/envsetup.sh
-lunch liquid_bonito-userdebug
+lunch liquid_sanders-userdebug
 mka liquid -j32 |& tee /tmp/build.log
