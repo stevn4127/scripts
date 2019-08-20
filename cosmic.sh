@@ -6,7 +6,7 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
 
 cd
 
-mkdir liquid
+mkdir cosmic
 
 mkdir -p ~/bin
 
@@ -14,11 +14,11 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
 chmod a+x ~/bin/repo
 
-cd $HOME/liquid
+cd $HOME/cosmic
 
-repo init -u git://github.com/LiquidRemix/android_manifest.git -b pie
+repo init -u https://github.com/Cosmic-OS/platform_manifest.git -b corona-release
 
-repo sync --force-sync -j32
+repo sync --no-tags --no-clone-bundle --force-sync -c
 
 rm -rf hardware/qcom/audio
 rm -rf device/google/bonito
@@ -28,7 +28,7 @@ rm -rf kernel/google/bonito
 rm -rf vendor/gapps
 rm -rf hardware/qcom/sdm710
 
-git clone https://github.com/stebomurkn420/device_google_bonito device/google/bonito -b liquid
+git clone https://github.com/stebomurkn420/device_google_bonito device/google/bonito -b cosmic
 git clone https://github.com/stebomurkn420/device_google_bonito-sepolicy device/google/bonito-sepolicy
 git clone https://github.com/stebomurkn420/vendor_google -b liquid vendor/google
 git clone --recurse-submodules https://github.com/stebomurkn420/Dank_sarnito -b inline kernel/google/bonito
@@ -42,5 +42,6 @@ git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/vr -b a
 git clone https://github.com/stebomurkn420/hardware_qcom_sdm710_data_ipacfg-mgr hardware/qcom/sdm710/data/ipacfg-mgr
 
 . build/envsetup.sh
-lunch liquid_bonito-userdebug
-mka liquid -j32 |& tee /tmp/build.log
+make clean
+lunch cos_bonito-userdebug
+mka cos -j32 |& tee /tmp/build.log
