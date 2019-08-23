@@ -36,7 +36,7 @@ git clone https://github.com/stebomurkn420/device_google_sargo device/google/sar
 git clone https://github.com/stebomurkn420/device_google_bonito device/google/bonito
 git clone https://github.com/stebomurkn420/device_google_bonito-sepolicy device/google/bonito-sepolicy
 git clone https://github.com/stebomurkn420/vendor_google vendor/google
-git clone --recurse-submodules https://github.com/stebomurkn420/Dank_kernel_google_bonito kernel/google/bonito
+git clone --recurse-submodules https://github.com/stebomurkn420/Dank_sarnito -b inline kernel/google/bonito
 git clone https://github.com/LineageOS/android_hardware_qcom_audio hardware/qcom/audio
 git clone https://github.com/DirtyUnicorns/android_hardware_google_pixel hardware/google/pixel
 git clone https://gitlab.com/stebomurkn420/vendor_gapps.git vendor/gapps
