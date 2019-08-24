@@ -21,7 +21,7 @@ export LD_LIBRARY_PATH=${HOME}/android/clang/clang-r353983e/lib64:$LD_LIBRARY_PA
 DEFCONFIG="dank_defconfig"
 
 # Kernel Details
-VER="Sarnito.V1.43"
+VER="Sarnito.V1.51"
 
 # Paths
 KERNEL_DIR=`pwd`
