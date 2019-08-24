@@ -28,7 +28,7 @@ rm -rf kernel/google/bonito
 rm -rf vendor/gapps
 rm -rf hardware/qcom/sdm710
 
-git clone https://github.com/stebomurkn420/device_google_bonito device/google/bonito -b liquid
+git clone https://github.com/stebomurkn420/Bonito -b pie device/google/bonito
 git clone https://github.com/stebomurkn420/device_google_bonito-sepolicy device/google/bonito-sepolicy
 git clone https://github.com/stebomurkn420/vendor_google -b liquid vendor/google
 git clone --recurse-submodules https://github.com/stebomurkn420/Dank_sarnito -b inline kernel/google/bonito
