@@ -8,7 +8,7 @@ git clone https://android.googlesource.com/device/google/bonito-sepolicy -b andr
 git clone https://github.com/UnicornioSucio/android_vendor_google vendor/google
 git clone https://github.com/UnicornioSucio/android_kernel_google_bluecross kernel/google/bluecross
 git clone https://gitlab.com/shagbag913/vendor_gapps.git -b lineage-17.0 vendor/gapps
-git clone https://gitlab.com/stebomurkn420/vendor_images.git -b ten vendor/images/bonito
+git clone https://gitlab.com/stebomurkn420/vendor_images.git -b ten vendor/images
 git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/display -b android-9.0.0_r47 hardware/qcom/sdm710/display
 git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/gps -b android-9.0.0_r47 hardware/qcom/sdm710/gps
 git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/media -b android-9.0.0_r47 hardware/qcom/sdm710/media
