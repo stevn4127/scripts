@@ -72,6 +72,6 @@ case "$cchoice" in
 esac
 done
 
-lunch liquid_bonito-userdebug
+lunch liquid_sargo-userdebug
 
 mka bacon -j32 |& tee /tmp/build.log
