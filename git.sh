@@ -2,12 +2,13 @@
 
 echo "This script should be ran from the root directory of your ROM's source. This script will clone the necessary repositories for building a ROM for the Pixel 3a (Sargo) and Pixel 3a XL (Bonito). The only repo that should need modified is the device tree which needs edited for your ROM's source. Hope this helps!"
 
-git clone https://github.com/stebomurkn420/Bonito -b pie device/google/bonito
-git clone https://github.com/stebomurkn420/device_google_sargo -b liquid device/google/sargo
-git clone https://github.com/stebomurkn420/device_google_bonito-sepolicy device/google/bonito-sepolicy
-git clone https://github.com/DirtyUnicorns/android_vendor_google vendor/google
-git clone --recurse-submodules https://github.com/stebomurkn420/Dank_sarnito -b inline kernel/google/bonito
-git clone https://gitlab.com/stebomurkn420/vendor_gapps.git vendor/gapps
+git clone https://github.com/stebomurkn420/Bonito -b ten device/google/bonito
+git clone https://github.com/stebomurkn420/Sargo -b ten device/google/sargo
+git clone https://android.googlesource.com/device/google/bonito-sepolicy -b android-10.0.0_r2 device/google/bonito-sepolicy
+git clone https://github.com/UnicornioSucio/android_vendor_google vendor/google
+git clone https://github.com/UnicornioSucio/android_kernel_google_bluecross kernel/google/bluecross
+git clone https://gitlab.com/shagbag913/vendor_gapps.git -b lineage-17.0 vendor/gapps
+git clone https://gitlab.com/stebomurkn420/vendor_images.git -b ten vendor/images/bonito
 git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/display -b android-9.0.0_r47 hardware/qcom/sdm710/display
 git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/gps -b android-9.0.0_r47 hardware/qcom/sdm710/gps
 git clone https://android.googlesource.com/platform/hardware/qcom/sdm710/media -b android-9.0.0_r47 hardware/qcom/sdm710/media
