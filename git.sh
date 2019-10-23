@@ -2,8 +2,8 @@
 
 echo "This script should be ran from the root directory of your ROM's source. This script will clone the necessary repositories for building a ROM for the Pixel 3a (Sargo) and Pixel 3a XL (Bonito). The only repo that should need modified is the device tree which needs edited for your ROM's source. Hope this helps!"
 
-git clone https://github.com/stebomurkn420/Bonito -b ten device/google/bonito
-git clone https://github.com/stebomurkn420/Sargo -b ten device/google/sargo
+git clone https://github.com/stebomurkn420/Bonito -b queso device/google/bonito
+git clone https://github.com/stebomurkn420/Sargo -b queso device/google/sargo
 git clone https://android.googlesource.com/device/google/bonito-sepolicy -b android-10.0.0_r2 device/google/bonito-sepolicy
 git clone https://github.com/DirtyUnicorns/android_vendor_google vendor/google
 git clone https://github.com/stebomurkn420/kernel_google_bluecross kernel/google/bluecross
