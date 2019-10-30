@@ -18,7 +18,7 @@ cd $HOME/liquid
 
 repo init -u git://github.com/LiquidRemix/android_manifest.git -b ten
 
-repo sync --force-sync -j32
+repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j8
 
 rm -rf device/google/bonito
 rm -rf device/google/sargo
