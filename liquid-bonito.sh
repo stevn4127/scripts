@@ -21,15 +21,16 @@ repo init -u git://github.com/LiquidRemix/android_manifest.git -b ten
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j8
 
 rm -rf device/google/bonito
+rm -rf device/google/bonito-kernel
 rm -rf device/google/sargo
 rm -rf device/google/bonito-sepolicy
 rm -rf device/qcom
 rm -rf hardware/qcom/sdm710
 rm -rf hardware/qcom/sdm845
 rm -rf kernel/google/bonito
-rm -rf vendor/google
-rm -rf vendor/images
-rm -rf vendor/gapps
+#rm -rf vendor/google
+#rm -rf vendor/images
+#rm -rf vendor/gapps
 
 git clone https://github.com/stebomurkn420/Bonito -b ten device/google/bonito
 git clone https://github.com/stebomurkn420/Sargo -b ten device/google/sargo
