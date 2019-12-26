@@ -37,7 +37,7 @@ rm -rf vendor/gapps
 git clone https://github.com/stebomurkn420/Bonito -b havoc device/google/bonito
 git clone https://android.googlesource.com/device/sample device/sample
 git clone https://android.googlesource.com/device/google/bonito-sepolicy -b android-10.0.0_r12 device/google/bonito-sepolicy
-git clone https://github.com/TheMuppets/proprietary_vendor_google vendor/google
+git clone https://GitHub.com/gahsrom/vendor_google vendor/google
 git clone https://github.com/stebomurkn420/kernel_google_b4s4 kernel/google/b4s4
 git clone https://gitlab.com/shagbag913/vendor_gapps.git -b lineage-17.0 vendor/gapps
 git clone https://github.com/stebomurkn420/sdm710_hardware_qcom_display hardware/qcom/sdm710/display

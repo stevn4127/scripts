@@ -1,3 +1,1 @@
-fastboot flash boot boot.img && fastboot flash dtbo dtbo.img && fastboot flash vbmeta vbmeta.img && fastboot reboot fastboot
-
-fastboot flash system system.img && fastboot flash vendor vendor.img && fastboot flash product product.img && fastboot -w && fastboot reboot
+fastboot flash boot boot.img && fastboot flash dtbo dtbo.img && fastboot flash vbmeta vbmeta.img && fastboot reboot fastboot && fastboot flash system system.img && fastboot flash vendor vendor.img && fastboot flash product product.img && fastboot -w && fastboot reboot
