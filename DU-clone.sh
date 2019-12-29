@@ -18,3 +18,4 @@ git clone https://github.com/DirtyUnicorns/android_device_google_bonito device/g
 git clone https://gitlab.com/DirtyUnicorns/android_vendor_pixelgapps.git vendor/pixelgapps
 git clone https://gitlab.com/DirtyUnicorns/android_vendor_images vendor/images
 git clone https://github.com/DirtyUnicorns/android_device_google_bonito-sepolicy device/google/bonito-sepolicy
+git clone https://github.com/DirtyUnicorns/android_device_google_sargo device/google/sargo
