@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+bash <(curl https://raw.githubusercontent.com/stebomurkn420/scripts/master/install-build-tools.sh)
+
 cd $HOME/posp
 
 repo init -u https://github.com/PotatoProject/manifest -b baked-release;
