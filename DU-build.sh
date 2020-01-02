@@ -54,3 +54,7 @@ export CCACHE_EXEC=/usr/bin/ccache
 lunch du_bonito-userdebug
 
 make bacon -j16 |& tee /tmp/build.log
+
+lunch du_sargo-userdebug
+
+make bacon -j16 |& tee /tmp/build.log
