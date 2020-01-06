@@ -47,6 +47,7 @@ git clone https://github.com/shagbag913/android_vendor_extra vendor/extra
 git clone https://github.com/shagbag913/android_device_google_bonito device/google/bonito
 git clone https://github.com/shagbag913/android_vendor_google vendor/google
 git clone https://github.com/shagbag913/android_kernel_google_msm-4.9 kernel/google/msm-4.9
+git clone https://gitlab.com/shagbag913/vendor_gapps.git -b lineage-17.1 vendor/gapps
 
 . build/envsetup.sh
 
