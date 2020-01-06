@@ -50,6 +50,8 @@ git clone https://github.com/shagbag913/android_kernel_google_msm-4.9 kernel/goo
 
 . build/envsetup.sh
 
+make clean
+
 lunch lineage_bonito-userdebug
 
 make bacon -j16 |& tee /tmp/build.log
