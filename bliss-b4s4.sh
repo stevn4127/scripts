@@ -16,6 +16,17 @@ chmod a+x ~/bin/repo
 
 cd $HOME/bliss
 
+rm -rf device/google/bonito
+rm -rf device/google/bonito-kernel
+rm -rf device/google/sargo
+rm -rf device/google/bonito-sepolicy
+rm -rf hardware/qcom/sdm710
+rm -rf hardware/qcom/sdm845/display
+rm -rf kernel/google/bonito
+rm -rf vendor/google
+rm -rf vendor/images
+rm -rf vendor/gapps
+
 repo init -u https://github.com/BlissRoms/platform_manifest.git -b q
 
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j16
@@ -31,12 +42,12 @@ rm -rf vendor/google
 rm -rf vendor/images
 rm -rf vendor/gapps
 
-git clone https://github.com/stebomurkn420/Bonito -b bliss device/google/bonito
+git clone https://github.com/stebomurkn420/Bonito -b q device/google/bonito
 git clone https://android.googlesource.com/device/sample device/sample
-git clone https://github.com/shagbag913/android_vendor_google vendor/google
-git clone https://github.com/stebomurkn420/kernel_google_b4s4 kernel/google/b4s4
-git clone https://gitlab.com/shagbag913/vendor_gapps.git -b lineage-17.1 vendor/gapps
-git clone https://github.com/LineageOS/android_hardware_qcom_sdm845_display hardware/qcom/sdm845/display
+git clone https://github.com/stebomurkn420/proprietary_android_vendor_google vendor/google
+git clone https://github.com/stebomurkn420/kernel_google_b4s4 -b q kernel/google/b4s4
+git clone https://gitlab.com/shagbag913/vendor_gapps -b ten vendor/gapps
+git clone https://github.com/LineageOS/android_hardware_qcom_sdm845_display -b lineage-17.1 hardware/qcom/sdm845/display
 
 cd $HOME/bliss
 
@@ -44,8 +55,8 @@ cd $HOME/bliss
 
 lunch bliss_bonito-userdebug
 
-make blissify -j32 |& tee /tmp/build.log
+make blissify |& tee /tmp/build.log
 
 lunch bliss_sargo-userdebug
 
-make blissify -j32 |& tee /tmp/build.log
+make blissify |& tee /tmp/build.log
