@@ -12,9 +12,9 @@ rm -rf vendor/images
 rm -rf vendor/gapps
 rm -rf hardware/qcom/sdm845/display
 
-git clone https://github.com/stebomurkn420/Bonito -b havoc device/google/bonito
+git clone https://github.com/stebomurkn420/Bonito -b q device/google/bonito
 git clone https://android.googlesource.com/device/sample device/sample
-git clone https://github.com/shagbag913/android_vendor_google vendor/google
-git clone https://github.com/stebomurkn420/kernel_google_b4s4 -b upstream kernel/google/b4s4
-git clone https://gitlab.com/shagbag913/vendor_gapps.git -b lineage-17.1 vendor/gapps
+git clone https://github.com/shagbag913/android_vendor_google -b lineage-17.1 vendor/google
+git clone https://github.com/stebomurkn420/kernel_google_b4s4 -b q kernel/google/b4s4
+git clone https://gitlab.com/shagbag913/vendor_gapps -b ten vendor/gapps
 git clone https://github.com/LineageOS/android_hardware_qcom_sdm845_display hardware/qcom/sdm845/display
