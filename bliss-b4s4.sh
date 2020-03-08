@@ -42,10 +42,10 @@ rm -rf vendor/google
 rm -rf vendor/images
 rm -rf vendor/gapps
 
-git clone https://github.com/stebomurkn420/Bonito -b q device/google/bonito
-git clone https://android.googlesource.com/device/sample device/sample
-git clone https://github.com/stebomurkn420/proprietary_android_vendor_google vendor/google
-git clone https://github.com/stebomurkn420/kernel_google_b4s4 -b q kernel/google/b4s4
+git clone https://github.com/BlissRoms-Devices/android_device_google_bonito -b q device/google/bonito
+#git clone https://android.googlesource.com/device/sample device/sample
+git clone https://github.com/BlissRoms-Devices/proprietary_android_vendor_google vendor/google
+git clone https://github.com/BlissRoms-Devices/android_kernel_google_b4s4 -b q kernel/google/b4s4
 git clone https://gitlab.com/shagbag913/vendor_gapps -b ten vendor/gapps
 git clone https://github.com/LineageOS/android_hardware_qcom_sdm845_display -b lineage-17.1 hardware/qcom/sdm845/display
 
@@ -56,6 +56,12 @@ cd $HOME/bliss
 lunch bliss_bonito-userdebug
 
 make blissify |& tee /tmp/build.log
+
+cd
+
+cd bliss
+
+. build/envsetup.sh
 
 lunch bliss_sargo-userdebug
 
