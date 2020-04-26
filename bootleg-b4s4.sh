@@ -6,7 +6,7 @@ sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-mult
 
 cd
 
-mkdir bliss
+mkdir bootleg
 
 mkdir -p ~/bin
 
@@ -14,7 +14,7 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
 chmod a+x ~/bin/repo
 
-cd $HOME/bliss
+cd $HOME/bootleg
 
 rm -rf device/google/bonito
 rm -rf device/google/bonito-kernel
@@ -25,26 +25,18 @@ rm -rf vendor/google
 rm -rf vendor/images
 rm -rf vendor/gapps
 
-repo init -u https://github.com/BlissRoms/platform_manifest.git -b q
+repo init -u https://github.com/BootleggersROM/manifest.git -b queso
 
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j32
 
-cd $HOME/bliss
+git clone https://github.com/stebomurkn420/Bonito -b queso device/google/bonito
+git clone https://github.com/stebomurkn420/kernel_google_b4s4 kernel/google/b4s4
+git clone https://github.com/BlissRoms-Devices/proprietary_android_vendor_google vendor/google
+#git clone https://gitlab.com/shagbag913/vendor_gapps.git vendor/gapps
 
 . build/envsetup.sh
 
-lunch bliss_bonito-userdebug
+lunch bootleg_bonito-userdebug
 
-repo sync
+mka bootleg |& tee /tmp/build.log
 
-make blissify |& tee /tmp/build.log
-
-cd
-
-cd bliss
-
-. build/envsetup.sh
-
-lunch bliss_sargo-userdebug
-
-make blissify |& tee /tmp/build.log
