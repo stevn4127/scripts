@@ -20,14 +20,14 @@ chmod a+x ~/bin/repo
 
 cd $HOME/bootleg
 
-rm -rf device/google/bonito
+#rm -rf device/google/bonito
 rm -rf device/google/bonito-kernel
-rm -rf device/google/sargo
+#rm -rf device/google/sargo
 rm -rf device/google/bonito-sepolicy
 rm -rf kernel/google/bonito
-rm -rf vendor/google
+#rm -rf vendor/google
 rm -rf vendor/images
-rm -rf vendor/gapps
+#rm -rf vendor/gapps
 
 repo init -u https://github.com/BootleggersROM/manifest.git -b queso
 
@@ -37,7 +37,7 @@ git clone https://github.com/stebomurkn420/Bonito -b queso device/google/bonito
 git clone https://android.googlesource.com/device/sample device/sample
 git clone https://github.com/stebomurkn420/kernel_google_b4s4 kernel/google/b4s4
 git clone https://github.com/BlissRoms-Devices/proprietary_android_vendor_google vendor/google
-#git clone https://gitlab.com/shagbag913/vendor_gapps.git vendor/gapps
+git clone https://gitlab.com/shagbag913/vendor_gapps.git vendor/gapps
 
 . build/envsetup.sh
 
