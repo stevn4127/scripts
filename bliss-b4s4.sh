@@ -26,17 +26,6 @@ sleep 5
 cd $HOME/bliss
 echo "CD into Home/bliss"
 
-rm -rf device/google/bonito
-rm -rf device/google/bonito-kernel
-rm -rf device/google/sargo
-rm -rf device/google/bonito-sepolicy
-rm -rf kernel/google/bonito
-rm -rf vendor/google
-rm -rf vendor/images
-rm -rf vendor/gapps
-echo "Removed any lingering dogshit"
-sleep 5
-
 echo "Initiating manifest. You may need to select Y/N here or git config --global user.email and git config --global user.name"
 repo init -u https://github.com/BlissRoms/platform_manifest.git -b q
 sleep 5
@@ -46,6 +35,17 @@ sleep 7
 
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j32
 echo "Repo syncing is complete"
+sleep 5
+
+rm -rf device/google/bonito
+rm -rf device/google/bonito-kernel
+rm -rf device/google/sargo
+rm -rf device/google/bonito-sepolicy
+rm -rf kernel/google/bonito
+rm -rf vendor/google
+rm -rf vendor/images
+rm -rf vendor/gapps
+echo "Removed any lingering dogshit"
 sleep 5
 
 echo "Now cloning the appropriate trees for Bonito"

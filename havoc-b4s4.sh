@@ -26,17 +26,6 @@ sleep 5
 cd $HOME/havoc
 echo "CD into Home/havoc"
 
-rm -rf device/google/bonito
-rm -rf device/google/bonito-kernel
-rm -rf device/google/sargo
-rm -rf device/google/bonito-sepolicy
-rm -rf kernel/google/bonito
-rm -rf vendor/google
-rm -rf vendor/images
-rm -rf vendor/gapps
-echo "Removed any lingering dogshit"
-sleep 5
-
 echo "Initiating manifest. You may need to select Y/N here or git config --global user.email and git config --global user.name"
 repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten
 sleep 5
@@ -48,6 +37,17 @@ repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-
 echo "Repo syncing is complete"
 sleep 5
 
+rm -rf device/google/bonito
+rm -rf device/google/bonito-kernel
+rm -rf device/google/sargo
+rm -rf device/google/bonito-sepolicy
+rm -rf kernel/google/bonito
+rm -rf vendor/google
+rm -rf vendor/images
+rm -rf vendor/gapps
+echo "Removed any lingering dogshit"
+sleep 5
+
 echo "Now cloning the appropriate trees for Bonito"
 sleep 5
 
@@ -57,8 +57,9 @@ git clone https://github.com/BlissRoms-Devices/android_kernel_google_b4s4 kernel
 echo "Cloning Dank kernel"
 git clone https://github.com/BlissRoms-Devices/proprietary_vendor_google vendor/google
 echo "Cloning proprietary vendor blobs"
-git clone https://gitlab.com/stebomurkn420/gapps.git -b bliss vendor/gapps
+git clone https://gitlab.com/stebomurkn420/gapps.git -b havoc vendor/gapps
 echo "Cloning Gapps"
+git clone https://android.googlesource.com/device/sample device/sample
 
 echo "Now starting the build. Lets roll another joint!"
 sleep 5
@@ -71,4 +72,5 @@ echo "Running lunch command"
 lunch havoc_bonito-userdebug
 
 echo "Starting the build with mka blissify"
-mka havoc |& tee /tmp/build.log
+sleep 5
+mka bacon |& tee /tmp/build.log
