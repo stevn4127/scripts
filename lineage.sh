@@ -13,7 +13,7 @@ echo "Installing build tools COMPLETED"
 sleep 5
 
 mkdir los
-echo "Created lineage directory"
+echo "Created los (LineageOS) directory"
 sleep 5
 
 mkdir -p ~/bin
@@ -65,6 +65,7 @@ rm -rf device/google/bonito-kernel
 rm -rf device/google/sargo
 rm -rf device/google/bonito-sepolicy
 rm -rf kernel/google/bonito
+rm -rf kernel/google/b4s4
 rm -rf vendor/google
 rm -rf vendor/images
 rm -rf packages/apps/Trebuchet
@@ -102,4 +103,4 @@ echo "Running lunch command"
 lunch lineage_bonito-userdebug
 
 echo "Starting the build with mka bacon"
-make bacon
+make bacon -j16
