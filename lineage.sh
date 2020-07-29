@@ -43,23 +43,6 @@ repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-
 echo "Repo syncing is complete"
 sleep 5
 
-cd frameworks/base
-
-git remote add shag https://github.com/GahsROM/platform_frameworks_base
-echo "Adding remote"
-sleep 3
-
-git fetch shag
-echo "fetching remote"
-sleep 3
-
-git cherry-pick 9cefdf0bbfb88759c445c226915d3535986c3184 590e923fb15818b20f45aa95a52fdc3ad0a32d2b
-echo "Cherry-picking alternate accent tint"
-
-cd
-
-cd los
-
 rm -rf device/google/bonito
 rm -rf device/google/bonito-kernel
 rm -rf device/google/sargo
