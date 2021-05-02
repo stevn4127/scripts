@@ -56,5 +56,5 @@ echo "Initializing build enviroment"
 sleep 5
 
 echo "Starting the build with mka blissify"
-blissify bonito |& tee /tmp/build.log
+blissify sargo |& tee /tmp/build.log
 
