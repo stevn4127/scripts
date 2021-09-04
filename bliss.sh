@@ -14,18 +14,21 @@ mkdir bliss
 echo "Created bliss directory"
 sleep 5
 
-mkdir -p ~/.bin
-PATH="${HOME}/.bin:${PATH}"
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
-chmod a+rx ~/.bin/repo
+#mkdir -p ~/.bin
+#PATH="${HOME}/.bin:${PATH}"
+#curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
+#chmod a+rx ~/.bin/repo
 
-sudo ln -fs /usr/bin/python2.7 /usr/bin/python3
+#sudo ln -fs /usr/bin/python2.7 /usr/bin/python3
+
+curl https://storage.googleapis.com/git-repo-downloads/repo-1 > ~/bin/repo
+chmod a+x ~/bin/repo
 
 cd $HOME/bliss
 echo "CD into Home/bliss"
 
 echo "Initiating manifest. You may need to select Y/N here or git config --global user.email and git config --global user.name"
-repo init -u https://github.com/BlissRoms/platform_manifest.git -b r
+python3 ~/bin/repo init -u https://github.com/BlissRoms/platform_manifest.git -b r
 sleep 5
 
 echo "The project will now sync all of the repositories needed to compile the ROM. Depending on your connection this could take a while! You can expect a 1 hour sync time on a connection of 100mb/s Download speed."
@@ -41,7 +44,7 @@ sleep 5
 echo "Now cloning the appropriate trees for Bonito"
 sleep 5
 
-git clone https://github.com/stevn4127/Bonito device/google/bonito
+git clone https://github.com/BlissRoms-Devices/android_device_google_bonito device/google/bonito
 echo "Cloning device tree for Bonito"
 git clone https://github.com/LineageOS/android_kernel_google_msm-4.9 kernel/google/msm-4.9
 echo "Cloning Dank kernel"
@@ -56,5 +59,5 @@ echo "Initializing build enviroment"
 sleep 5
 
 echo "Starting the build with mka blissify"
-blissify bonito |& tee /tmp/build.log
+blissify -g bonito |& tee /tmp/build.log
 
