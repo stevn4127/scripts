@@ -34,7 +34,7 @@ sleep 5
 echo "The project will now sync all of the repositories needed to compile the ROM. Depending on your connection this could take a while! You can expect a 1 hour sync time on a connection of 100mb/s Download speed."
 sleep 7
 
-repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j32
+python3 ~/bin/repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 echo "Repo syncing is complete"
 sleep 5
 
@@ -44,7 +44,7 @@ sleep 5
 echo "Now cloning the appropriate trees for Bonito"
 sleep 5
 
-git clone https://github.com/BlissRoms-Devices/android_device_google_bonito device/google/bonito
+git clone https://github.com/BlissRoms-Devices/android_device_google_bonito -b r device/google/bonito
 echo "Cloning device tree for Bonito"
 git clone https://github.com/LineageOS/android_kernel_google_msm-4.9 kernel/google/msm-4.9
 echo "Cloning Dank kernel"
