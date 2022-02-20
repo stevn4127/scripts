@@ -1,0 +1,55 @@
+Commits need for Bliss:
+
+Add Vendorbootconfig
+https://github.com/Albinoman887/android_build/commit/b486e94eb2f59d188397fe17f8aaf05cca0a7b28
+
+FOD
+https://github.com/Albinoman887/android_frameworks_base/commit/94b5cd382c347a23fbd01fd606f0e435b8e1e260
+https://github.com/Albinoman887/android_frameworks_base/commit/72aa1d76f58fbb4d55a9af0c53bb1f147a266fda
+https://github.com/Albinoman887/android_frameworks_base/commit/0306aae308647d54e8a4b4218c84df7c37091cd8
+https://github.com/Albinoman887/android_frameworks_base/commit/96b1ffa30c24c6be86ccc20b6326f8530868e9a1
+
+Device tree:  https://github.com/stevn4127/device_google_raviole
+Device Common tree:  https://github.com/stevn4127/android_device_google_gs101
+Device sepolicy:  https://github.com/stevn4127/android_device_google_gs101-sepolicy
+Kernel: https://android.googlesource.com/device/google/raviole-kernel
+vendor: https://gitlab.com/stebomurkn420/vendor_google
+
+
+#BlissROM #raven
+Bliss ROM 15.1 | 12 Arcadia
+For Google Pixel 6 Pro
+By stebomurkn420
+
+Download: https://mega.nz/folder/b2QhVISK#LE-tdm-iw_XHw90fdz07JQ
+
+Changelog: Way to many changes to explain and I did not document all my work properly. This should be a great base to start from now!
+* Lawnchair added
+* duplicate AOSP apps removed
+* HBM fixed thanks to Albinoman887
+* New super minimal Gapps built inline
+* specify CccDkTimeService as presigned which fixes the constant spamming in previous logs thank to anayw2001
+
+Follow 👉🏻 Bliss unofficial Channel https://t.me/nugrelease
+Join 👉🏻 Bliss Support Group https://t.me/NugTowersHQ
+Join 👉🏻 Device specific chat https://t.me/NugTowersHQ
+
+
+#BlissROM #oriole
+Bliss ROM 15.1 | 12 Arcadia
+For Google Pixel 6
+By stebomurkn420
+
+Download: https://mega.nz/folder/SiQXxazZ#ov6EqH783qxfKMzbODfR2A
+
+Changelog: Way to many changes to explain and I did not document all my work properly. This should be a great base to start from now!
+* Lawnchair added
+* duplicate AOSP apps removed
+* HBM fixed thanks to Albinoman887 (raven)
+* New super minimal Gapps built inline
+* specify CccDkTimeService as presigned which fixes the constant spamming in previous logs thank to anayw2001 (raven)
+
+Follow 👉🏻 Bliss unofficial Channel https://t.me/nugrelease
+Join 👉🏻 Bliss Support Group https://t.me/NugTowersHQ
+Join 👉🏻 Device specific chat https://t.me/NugTowersHQ
+
