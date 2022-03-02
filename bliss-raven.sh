@@ -41,6 +41,7 @@ sleep 5
 rm -rf frameworks/base
 rm -rf build/make
 rm -rf build/soong
+rm -rf hardware/google/pixel-sepolicy
 rm -rf vendor/google
 rm -rf vendor/gms
 echo "Removed repos that need patches"
@@ -63,12 +64,13 @@ git clone https://github.com/stevn4127/android_device_google_gs101 -b arcadia de
 echo "Cloning gs101"
 git clone https://github.com/stevn4127/android_device_google_gs101-sepolicy -b arcadia device/google/gs101-sepolicy
 echo "Cloning gs101-sepolicy"
-git clone https://android.googlesource.com/device/google/raviole-kernel -b android-12.0.0_r32 device/googel/raviole-kernel
+git clone https://android.googlesource.com/device/google/raviole-kernel -b android-12.0.0_r32 device/google/raviole-kernel
 echo "Cloning AOSP kernel"
 git clone https://gitlab.com/stebomurkn420/vendor_google -b arcadia vendor/google
 echo "Cloning proprietary vendor blobs"
-git clone https://gitlab.com/stebomurkn420/platform_vendor_gms -b arcadia vendor/gms
-echo "Cloning gapps"
+git clone https://github.com/stevn4127/hardware_google_pixel-sepolicy -b arcadia hardware/google/pixel-sepolicy
+#git clone https://gitlab.com/stebomurkn420/platform_vendor_gms -b arcadia vendor/gms
+#echo "Cloning gapps"
 
 
 echo "Now starting the build. Lets roll another joint!"
